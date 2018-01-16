@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+<section>
+    <div class="mc">
+        <div class="AN">
+            <span class="an-o">&#xe607;</span>
+            <span class="an-t">&#xe884;</span>
+            <span class="an-th">&#xe61e;</span>
+            <span class="an-f">&#xe885;</span>
+            <span class="an-fv">&#xe608;</span>
+        </div>
+    </div>
+    <ul class="t-all">
+        <li class="first-t">
+            <div class="first">
+                <img src="images/txt_1.png">
+                <div class="ck">查看详情</div>
+            </div>
+        </li>
+        <li class="two-t" style="display: none">
+            <div class="two">
+                <img src="images/txt_2.png">
+                <div class="ck">查看详情</div>
+            </div>
+        </li>
+        <li class="three-t" style="display: none">
+            <div class="three">
+                <img src="images/txt_3.png">
+                <div class="ck">查看详情</div>
+            </div>
+        </li>
+        <li class="four-t" style="display: none">
+            <div class="four">
+                <img src="images/txt_4.png">
+                <div class="ck">查看详情</div>
+            </div>
+        </li>
+        <li class="five-t" style="display: none">
+            <div class="five">
+                <img src="images/txt_5.png">
+                <div class="ck">查看详情</div>
+            </div>
+        </li>
+    </ul>
+    <div class="cd">
+        <span>
+           <span class="xian1"></span>
+           <span class="xian2"></span>
+           <span class="xian3"></span>
+        </span>
+        <span>更多</span>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><span class="circle"></span>jquery</li>
+            <li>赚钱宝</li>
+            <li>新闻动态</li>
+            <li>人力资源</li>
+            <li>投资关系</li>
+            <li>关于jquery</li>
+            <li>联系我们</li>
+            <li>关于jquery</li>
+            <li>公司简介</li>
+        </ul>
+    </div>
+</section>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+    var start = [$(".first-t"), $(".two-t"), $(".three-t"), $(".four-t"), $(".five-t")];
+    var aniu = [$(".an-o"), $(".an-t"), $(".an-th"), $(".an-f"), $(".an-fv")];
+    i = 0, s = 0;
+    var time = setInterval(fun1, 2000);
+    var times = setInterval(fun2, 2000);
+    function fun1() {
+        i++;
+        start[i % 5].fadeToggle(1000);
+        start[i%5].find("img").animate({opacity:"1",top:'16%'},700);
+        start[i%5].find(".ck").fadeIn(4000);
+        start[(i - 1) % 5].fadeToggle(1000);
+        start[(i-1)%5].find("img").animate( {opacity:"0",top:"10%"},1);
+        start[(i-1)%5].find(".ck").fadeOut(1000);
+    }
+    function fun2() {
+        s++;
+        aniu[s % 5].css("border-bottom", "3px solid");
+        aniu[(s - 1) % 5].css("border-bottom", "0");
+    }
+    $.each($(".AN span"), function (e) {
+        $(this).mouseenter(function () {
+            time = clearInterval(time);
+            times = clearInterval(times);
+            $(this).css("border-bottom", "3px solid").siblings().css("border-bottom","0");
+            start[e].fadeIn().siblings().fadeOut();
+            start[e].find("img").animate({opacity:"1",top:"16%"},1000);
+        });
+    });
+    $.each($(".AN span"), function (e) {
+        $(this).mouseleave(function () {
+            time = setInterval(fun1, 2000);
+            times = setInterval(fun2, 2000);
+            i=e;
+            s=e;
+            start[e].find("img").animate({top:"10%"},1);
+        });
+    });
+    $(document).on("mouseenter", ".cd", function () {
+        $(this).addClass("cdbk");
+        $(this).next().animate({right: "0"}, 300);
+    });
+    $(".nav").mouseleave(function () {
+        $(this).animate({right: "-150px"}, 300);
+        $(".circle").css("opacity","0");
+    });
+    $(document).on("mouseleave", ".cd", function () {
+        $(this).removeClass("cdbk");
+    });
+    $(".nav").on("mouseenter", "li", function () {
+        var top=$(this).offset().top;
+        $(".circle").animate({top:top+1+"px",opacity:"1"},200);
+    });
+
+       document.onmousewheel=function (e) {
+          var e=e||window.event;
+          if(e.wheelDelta>0){
+              $(".AN").animate({bottom:"10%"},200);
+              $(".mc").removeClass("mc_bg");
+          }else{
+              $(".AN").animate({bottom:"30%"},200);
+              $(".mc").addClass("mc_bg");
+          }
+       }
+
+</script>
+</body>
+</html>

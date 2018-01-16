@@ -1,0 +1,242 @@
+*{
+    margin:0;
+    padding:0;
+}
+@font-face {
+    src: url("../css/iconfont.woff");
+    font-family: "ym";
+}
+.mc{
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    bottom:0;
+    z-index: 5;
+}
+.mc_bg{
+    background: url("../images/rpt_bg.png") no-repeat center top;
+    background-size: 100% 100%;
+}
+.AN{
+    position: absolute;
+    bottom:10%;
+    left:40%;
+    z-index: 15;
+    width: 320px;
+    height: 50px;
+    border-bottom: 3px solid rgba(255,255,255,0.3);
+    padding-bottom: 6px;
+}
+.AN span{
+    font-family: "ym";
+    color: white;
+    font-size: 3rem;
+    margin-left: -4px;
+    display: inline-block;
+    width: 55px;
+    height: 50px;
+    padding-bottom: 6px;
+}
+.AN span:nth-of-type(1){
+    border-bottom: 3px solid white;
+    margin-left: 10px;
+}
+.AN span:hover{
+    cursor: pointer;
+}
+section{
+    width: 100%;
+    height: 638px;
+    position: relative;
+    overflow: hidden;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+section ul{
+    list-style: none;
+    width: 100%;
+    height: 638px;
+}
+section ul li{
+    width: 100%;
+    height: 639px;
+    position: absolute;
+}
+section ul li:nth-of-type(1){
+    z-index: 1;
+}
+.first,.two,.three,.four,.five{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.first{
+    background: url("../images/bg_shoulei.jpg") no-repeat center top;
+    background-size: 100% 100%;
+}
+.two{
+    background: url("../images/bg_xnet.jpg") no-repeat center top;
+    background-size: 100% 100%;
+}
+.three{
+    background: url("../images/bg_member.jpg") no-repeat center top;
+    background-size: 100% 100%;
+}
+.four{
+    background: url("../images/bg_xkn.jpg") no-repeat center top;
+    background-size: 100% 100%;
+}
+.five{
+    background: url("../images/bg_xav.jpg") no-repeat center top;
+    background-size: 100% 100%;
+}
+.first img,.two img,.three img,.four img,.five img{
+    position: absolute;
+}
+.first img{
+    top:10%;
+    left:40%;
+    width: 300px;
+    opacity: 1;
+}
+.two img{
+    top:10%;
+    left:50%;
+    height: 300px;
+}
+.three img{
+    top:10%;
+    left:35%;
+    width: 400px;
+}
+.four img{
+    top:10%;
+    left:35%;
+    width: 400px;
+}
+.five img{
+    top:10%;
+    left:38%;
+    width: 300px;
+}
+.first div,.two div,.three div,.four div,.five div{
+    position: absolute;
+    font-size: 0.9rem;
+    width: 100px;
+    height: 25px;
+    font-weight: bolder;
+    line-height: 25px;
+    text-align: center;
+}
+.first div{
+
+    top:28%;
+    left:47%;
+    border: 1px solid black;
+    opacity: 1;
+
+}
+.two div{
+    top:70%;
+    left:48%;
+    border: 1px solid white;
+    color: white;
+}
+.three div{
+    top:35%;
+    left:46%;
+    border: 1px solid white;
+    color: white;
+}
+.four div{
+    top:33%;
+    left:46%;
+    border: 1px solid black;
+    color: black;
+}
+.five div{
+    top:28%;
+    left:45%;
+    border: 1px solid white;
+    color: white;
+}
+section .nav{
+    width: 150px;
+    height: 100%;
+    position: absolute;
+    right: -150px;
+    top:0;
+    text-align: center;
+    z-index: 5;
+    background: rgba(0,0,0,0.3);
+}
+section .cd{
+    color: white;
+    position: fixed;
+    right: 0%;
+    top:1%;
+    z-index: 6;
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+.cd span:nth-of-type(1){
+    font-weight: bolder;
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+.xian1,.xian2,.xian3{
+    display:inline-block;
+    width: 26px;
+    height:3px;
+    margin-top: 10%;
+    background: white;
+    position: absolute;
+    top:0;
+    right: 65%;
+}
+.xian2{
+    top:8px;
+    right: 68.5%;
+}
+.xian3{
+    top:16px;
+    right:68.5%;
+}
+.cdbk{
+    border:2px solid rgba(255,255,255,0.4);
+}
+section .nav ul{
+    overflow: hidden;
+}
+section .nav ul li{
+    position: static;
+    height: 20px;
+    margin-top: 45px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+}
+section .nav ul li:nth-of-type(1){
+    margin-top: 45%;
+}
+section .nav ul li:hover{
+    color: white;
+    cursor: pointer;
+}
+.circle{
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #4edcff;
+    position: absolute;
+    right: 78%;
+    z-index: 6;
+    opacity: 0;
+}
+.ck:hover{
+    font-weight: bolder;
+    border:2px solid;
+    cursor: pointer;
+}
